@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Oversia — Monitoreo Regulatorio y Sanitario para empresas de LATAM</title>
 <meta name="description" content="Oversia monitorea agencias regulatorias, ministerios de salud y boletines oficiales de Latinoamérica. Reciba cada semana solo la información sanitaria y regulatoria que impacta a sus productos, priorizada y con la acción recomendada.">
-<link rel="icon" href="assets/oversia-logo.png">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -44,54 +46,127 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="report-doc" role="img" aria-label="Ejemplo de informe semanal en PDF con alertas priorizadas">
+        <div class="report-doc" role="group" aria-roledescription="carrusel" aria-label="Ejemplo de informe regulatorio semanal">
           <div class="report-toolbar">
             <span class="report-filename"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>informe-semanal-S27.pdf</span>
             <span class="report-toolbar-dots" aria-hidden="true"><span></span><span></span><span></span></span>
           </div>
-          <div class="report-page">
-            <div class="report-doc-head">
-              <div class="report-brand">
-                <img src="assets/oversia-logo.png" alt="Oversia" class="report-brand-logo">
-                <span class="report-doc-kicker">Monitoreo regulatorio y sanitario · LATAM</span>
+
+          <div class="report-viewport">
+            <div class="report-track" id="report-track">
+
+              <!-- Página 1: Resumen -->
+              <div class="report-slide" role="group" aria-roledescription="diapositiva" aria-label="Página 1 de 2 · Resumen">
+                <div class="report-page">
+                  <div class="report-doc-head">
+                    <img src="assets/oversia-logo.png" alt="Oversia" class="report-brand-logo">
+                    <div class="report-doc-meta">
+                      <span class="report-ref">OVS-2026-W27</span>
+                      <span>29 jun – 03 jul 2026</span>
+                    </div>
+                  </div>
+                  <div class="report-doc-title">
+                    <span class="report-doc-kicker">Monitoreo regulatorio y sanitario · LATAM</span>
+                    <h3>Informe regulatorio semanal</h3>
+                    <p>Preparado para <strong>Laboratorios Ejemplo S.A.</strong> · Semana 27 · 2026</p>
+                  </div>
+                  <div class="report-metrics">
+                    <div class="report-metric"><span class="report-metric-num">26</span><span class="report-metric-lbl">Analizadas</span></div>
+                    <div class="report-metric"><span class="report-metric-num">18</span><span class="report-metric-lbl">Relevantes</span></div>
+                    <div class="report-metric"><span class="report-metric-num">10</span><span class="report-metric-lbl">Prioridad alta</span></div>
+                    <div class="report-metric"><span class="report-metric-num">2</span><span class="report-metric-lbl">Revisión humana</span></div>
+                  </div>
+                  <div class="report-exec">
+                    <span class="report-exec-title">Resumen ejecutivo</span>
+                    <p>Semana con foco en el uso responsable de medicamentos de venta libre y en la cooperación regulatoria regional. Las alertas más críticas provienen de Brasil, Colombia y Perú.</p>
+                  </div>
+                  <div class="report-prio">
+                    <span class="report-section-label">Relevantes por prioridad</span>
+                    <div class="prio-bar" role="img" aria-label="10 de prioridad alta, 6 media y 2 baja">
+                      <span class="prio-seg seg-alta" style="width:56%"></span>
+                      <span class="prio-seg seg-media" style="width:33%"></span>
+                      <span class="prio-seg seg-baja" style="width:11%"></span>
+                    </div>
+                    <div class="prio-legend">
+                      <span><i class="dot-alta"></i>Alta 10</span>
+                      <span><i class="dot-media"></i>Media 6</span>
+                      <span><i class="dot-baja"></i>Baja 2</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="report-doc-meta">
-                <span class="report-ref">Ref. OVS-2026-W27</span>
-                <span>06 jul 2026</span>
+
+              <!-- Página 2: Alertas priorizadas (1 de 2) -->
+              <div class="report-slide" role="group" aria-roledescription="diapositiva" aria-label="Página 2 de 3 · Alertas priorizadas">
+                <div class="report-page">
+                  <div class="report-doc-title compact">
+                    <span class="report-doc-kicker">Alertas priorizadas · 1 de 2</span>
+                    <h3>Novedades por país</h3>
+                  </div>
+                  <div class="report-item priority-alta">
+                    <p class="report-item-title">Advertencia sobre medicamentos de venta libre</p>
+                    <p class="report-item-meta">ANVISA Brasil<span class="report-sep">·</span>02/07<span class="report-sep">·</span><span class="badge badge-alta">Alta</span></p>
+                    <p class="report-item-body"><strong>Impacto.</strong> ANVISA advierte sobre los riesgos de los medicamentos de venta libre y refuerza la orientación médica en su uso, con impacto en la percepción pública y la regulación de los productos OTC.</p>
+                    <p class="report-item-body"><strong>Acción recomendada.</strong> Preparar campañas de educación al consumidor sobre el uso seguro de OTC y monitorear posibles consultas públicas.</p>
+                  </div>
+                  <div class="report-item priority-alta">
+                    <p class="report-item-title">Invima y Anvisa fortalecen la cooperación regulatoria</p>
+                    <p class="report-item-meta">INVIMA Colombia<span class="report-sep">·</span>01/07<span class="report-sep">·</span><span class="badge badge-alta">Alta</span></p>
+                    <p class="report-item-body"><strong>Impacto.</strong> Invima y Anvisa firman un memorando para intercambiar decisiones regulatorias y agilizar la evaluación de medicamentos, con potencial de acelerar el acceso a productos en la región.</p>
+                    <p class="report-item-body"><strong>Acción recomendada.</strong> Seguir la implementación e identificar oportunidades de registro más ágil en Colombia y Brasil.</p>
+                  </div>
+                </div>
               </div>
+
+              <!-- Página 3: Alertas priorizadas (2 de 2) -->
+              <div class="report-slide" role="group" aria-roledescription="diapositiva" aria-label="Página 3 de 3 · Alertas priorizadas">
+                <div class="report-page">
+                  <div class="report-doc-title compact">
+                    <span class="report-doc-kicker">Alertas priorizadas · 2 de 2</span>
+                    <h3>Novedades por país</h3>
+                  </div>
+                  <div class="report-item priority-media">
+                    <p class="report-item-title">Semana por el Uso Racional de Medicamentos</p>
+                    <p class="report-item-meta">Digemid Perú<span class="report-sep">·</span>02/07<span class="report-sep">·</span><span class="badge badge-media">Media</span></p>
+                    <p class="report-item-body"><strong>Impacto.</strong> El Minsa, a través de Digemid, lanza una campaña con ferias y capacitaciones sobre el uso seguro de medicamentos y la prevención de la automedicación.</p>
+                    <p class="report-item-body"><strong>Acción recomendada.</strong> Evaluar sumarse a la difusión y alinear la comunicación de producto con el mensaje de uso responsable.</p>
+                  </div>
+                  <div class="report-item priority-alta">
+                    <p class="report-item-title">Actualización de sustancias sujetas a fiscalización</p>
+                    <p class="report-item-meta">ANMAT Argentina<span class="report-sep">·</span>29/06<span class="report-sep">·</span><span class="badge badge-alta">Alta</span></p>
+                    <p class="report-item-body"><strong>Impacto.</strong> Mediante la Disposición 3943/26, ANMAT actualiza las listas de sustancias sujetas a fiscalización, lo que puede requerir ajustes de cumplimiento en productos que las contengan.</p>
+                    <p class="report-item-body"><strong>Acción recomendada.</strong> Revisar el nuevo listado y evaluar su impacto en el portfolio; involucrar al área de Asuntos Regulatorios.</p>
+                  </div>
+                  <p class="report-more">+ 14 alertas relevantes en el informe completo</p>
+                  <div class="report-doc-foot">
+                    <span>Cada alerta enlaza a la fuente oficial</span>
+                    <span>Confidencial</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
-            <div class="report-doc-title">
-              <h3>Informe regulatorio semanal</h3>
-              <p>Preparado para <strong>Laboratorios Ejemplo S.A.</strong> · Semana 27 · 2026</p>
+          </div>
+
+          <div class="report-nav">
+            <button type="button" class="report-arrow" id="report-prev" aria-label="Página anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="report-dots" id="report-dots" role="tablist" aria-label="Páginas del informe">
+              <button type="button" class="report-dot is-active" data-slide="0" aria-label="Ir a la página 1" aria-selected="true"></button>
+              <button type="button" class="report-dot" data-slide="1" aria-label="Ir a la página 2" aria-selected="false"></button>
+              <button type="button" class="report-dot" data-slide="2" aria-label="Ir a la página 3" aria-selected="false"></button>
             </div>
-            <div class="report-metrics">
-              <div class="report-metric"><span class="report-metric-num">26</span><span class="report-metric-lbl">Analizadas</span></div>
-              <div class="report-metric"><span class="report-metric-num">18</span><span class="report-metric-lbl">Relevantes</span></div>
-              <div class="report-metric"><span class="report-metric-num">10</span><span class="report-metric-lbl">Prioridad alta</span></div>
-              <div class="report-metric"><span class="report-metric-num">2</span><span class="report-metric-lbl">Revisión humana</span></div>
-            </div>
-            <div class="report-exec">
-              <span class="report-exec-title">Resumen ejecutivo</span>
-              <p>26 alertas analizadas, 18 relevantes para su operación. Las más críticas provienen de Brasil y Perú, con foco en el uso responsable de medicamentos de venta libre.</p>
-            </div>
-            <span class="report-section-label">Novedades por país</span>
-            <div class="report-item priority-alta">
-              <p class="report-item-title">ANVISA advierte sobre riesgos de medicamentos de venta libre</p>
-              <p class="report-item-meta">ANVISA Brasil<span class="report-sep">·</span>02/07/2026<span class="report-sep">·</span><span class="badge badge-alta">Prioridad alta</span></p>
-              <p class="report-item-body"><strong>Impacto.</strong> Refuerza la orientación médica en el uso de productos OTC; puede influir en la percepción pública y en su regulación.</p>
-              <p class="report-item-body"><strong>Acción recomendada.</strong> Coordinar campañas de educación al consumidor sobre el uso seguro de medicamentos OTC.</p>
-            </div>
-            <div class="report-item priority-media">
-              <p class="report-item-title">COFEPRIS actualiza requisitos para el registro de dispositivos médicos</p>
-              <p class="report-item-meta">COFEPRIS México<span class="report-sep">·</span>01/07/2026<span class="report-sep">·</span><span class="badge badge-media">Prioridad media</span></p>
-            </div>
-            <div class="report-doc-foot">
-              <span>Cada alerta enlaza a la fuente oficial · Trazable al boletín original</span>
-              <span>Página 1 de 3 · Confidencial</span>
-            </div>
-            <p class="report-doc-disclaimer">Las acciones sugeridas son orientativas; la interpretación final corresponde a su equipo regulatorio. Oversia no reemplaza asesoramiento jurídico, técnico ni regulatorio.</p>
+            <button type="button" class="report-arrow" id="report-next" aria-label="Página siguiente">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
           </div>
         </div>
+
+        <a class="report-download" href="assets/informe-ejemplo-oversia.pdf" download target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Descargar informe de ejemplo completo (PDF)
+        </a>
       </div>
     </div>
   </section>

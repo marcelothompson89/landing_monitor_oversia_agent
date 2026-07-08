@@ -58,4 +58,69 @@ document.addEventListener('DOMContentLoaded', () => {
     status.textContent = 'Complete el formulario y le enviaremos un informe de muestra por correo.';
     status.className = 'form-status';
   });
+
+  initReportCarousel();
 });
+
+// Carrusel del informe de muestra en el hero (2 páginas).
+function initReportCarousel() {
+  const track = document.getElementById('report-track');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.report-slide');
+  const dots = [...document.querySelectorAll('#report-dots .report-dot')];
+  const prevBtn = document.getElementById('report-prev');
+  const nextBtn = document.getElementById('report-next');
+  const total = slides.length;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let index = 0;
+  let timer = null;
+
+  function goTo(i) {
+    index = (i + total) % total;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, n) => {
+      const active = n === index;
+      d.classList.toggle('is-active', active);
+      d.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  }
+
+  function next() { goTo(index + 1); }
+  function prev() { goTo(index - 1); }
+
+  function startAuto() {
+    if (reduceMotion || total < 2) return;
+    stopAuto();
+    timer = setInterval(next, 6000);
+  }
+  function stopAuto() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+  function restartAuto() { stopAuto(); startAuto(); }
+
+  nextBtn.addEventListener('click', () => { next(); restartAuto(); });
+  prevBtn.addEventListener('click', () => { prev(); restartAuto(); });
+  dots.forEach((d) => d.addEventListener('click', () => {
+    goTo(Number(d.dataset.slide)); restartAuto();
+  }));
+
+  const doc = track.closest('.report-doc');
+  doc.addEventListener('mouseenter', stopAuto);
+  doc.addEventListener('mouseleave', startAuto);
+  doc.addEventListener('focusin', stopAuto);
+  doc.addEventListener('focusout', startAuto);
+
+  // Swipe táctil
+  let startX = null;
+  track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', (e) => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); restartAuto(); }
+    startX = null;
+  }, { passive: true });
+
+  goTo(0);
+  startAuto();
+}

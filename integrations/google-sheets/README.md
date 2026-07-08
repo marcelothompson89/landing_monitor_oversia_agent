@@ -19,7 +19,7 @@ propio; funciona con el sitio estático en Vercel.
    [`Code.gs`](./Code.gs) de esta carpeta.
    - (Opcional) Para recibir un email por cada solicitud, complete
      `NOTIFY_EMAIL` con su correo.
-   - Guarde (ícono de disquete).
+   - Guarde (ícono de disquete)
 
 4. **Publique como aplicación web**
    Botón **Implementar → Nueva implementación** → engranaje → **Aplicación web**.
