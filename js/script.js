@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const esInforme = data.tipo === 'informe';
     const nombre = data.nombre.split(' ')[0];
 
     submitBtn.disabled = true;
@@ -35,9 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       await fetch(FORM_ENDPOINT, { method: 'POST', body: formData, mode: 'no-cors' });
 
-      status.textContent = esInforme
-        ? `Gracias, ${nombre}. Le enviaremos un informe de muestra a ${data.email} a la brevedad.`
-        : `Gracias, ${nombre}. Nos pondremos en contacto con usted en ${data.email} para coordinar la demostración.`;
+      status.textContent = `Gracias, ${nombre}. Nos pondremos en contacto con usted en ${data.email} para coordinar la demostración.`;
       status.classList.add('success');
       form.reset();
     } catch (err) {
@@ -47,16 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Solicitar demostración';
     }
-  });
-
-  const sampleLink = document.getElementById('sample-link');
-  sampleLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    const informeRadio = document.querySelector('input[name="tipo"][value="informe"]');
-    if (informeRadio) informeRadio.checked = true;
-    document.getElementById('nombre').focus();
-    status.textContent = 'Complete el formulario y le enviaremos un informe de muestra por correo.';
-    status.className = 'form-status';
   });
 
   initReportCarousel();

@@ -540,31 +540,6 @@ h3 { font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
   color: var(--accent);
 }
 
-.report-download {
-  display: flex;
-  width: fit-content;
-  align-items: center;
-  gap: 8px;
-  margin: 16px auto 0;
-  padding: 9px 16px;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  background: #fff;
-  color: var(--text);
-  font-size: 0.86rem;
-  font-weight: 600;
-  box-shadow: var(--shadow-sm);
-  transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.report-download:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  box-shadow: 0 8px 20px -12px rgba(37, 99, 235, 0.6);
-}
-
-.report-download svg { width: 17px; height: 17px; }
-
 .alert-item {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -930,9 +905,6 @@ h3 { font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
 .cta-copy h2 { color: #fff; }
 .cta-copy .body-text { color: #b9c4d8; }
 
-.sample-request { margin-top: 22px; color: #b9c4d8; font-size: 0.95rem; }
-.sample-request a { color: #7fb0ff; text-decoration: underline; }
-
 .contact-form {
   background: #fff;
   border-radius: var(--radius);
@@ -977,55 +949,6 @@ h3 { font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
   height: 1px;
   opacity: 0;
   pointer-events: none;
-}
-
-/* Form: request type selector */
-.form-choice {
-  border: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.form-choice legend {
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--text);
-  padding: 0;
-  margin-bottom: 8px;
-  width: 100%;
-}
-
-.choice-option {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  flex: 1 1 0;
-  min-width: 140px;
-  padding: 11px 14px;
-  border: 1.5px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: var(--text);
-  background: #fff;
-  cursor: pointer;
-  transition: border-color 0.15s ease, background 0.15s ease;
-}
-
-.choice-option:hover { border-color: var(--accent); }
-
-.choice-option input { accent-color: var(--accent); margin: 0; }
-
-.choice-option:has(input:checked) {
-  border-color: var(--accent);
-  background: rgba(37, 99, 235, 0.06);
-}
-
-.choice-option:has(input:focus-visible) {
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
 }
 
 /* Disclaimer band */
