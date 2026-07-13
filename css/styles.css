@@ -893,6 +893,59 @@ h3 { font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
 .testimonial-author span { font-size: 0.88rem; color: var(--text-muted); }
 
 /* CTA + Form */
+/* Programa piloto */
+.pilot-card {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 44px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.pilot-badge {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pilot-list {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 32px;
+  text-align: left;
+}
+
+.pilot-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--text);
+  font-size: 0.98rem;
+}
+
+.pilot-list li strong { font-weight: 600; }
+
+.pilot-list svg {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+  margin-top: 1px;
+}
+
 .cta-final { background: var(--navy); color: #fff; }
 
 .cta-grid {
@@ -904,6 +957,16 @@ h3 { font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
 
 .cta-copy h2 { color: #fff; }
 .cta-copy .body-text { color: #b9c4d8; }
+
+.cta-sample {
+  margin: 22px 0 0;
+  padding: 14px 18px;
+  border-left: 3px solid #7fb0ff;
+  background: rgba(127, 176, 255, 0.08);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: #cdd7e8;
+  font-size: 0.96rem;
+}
 
 .contact-form {
   background: #fff;
@@ -919,8 +982,10 @@ h3 { font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
 .form-row { display: flex; flex-direction: column; gap: 6px; }
 
 .form-row label { font-weight: 600; font-size: 0.85rem; color: var(--text); }
+.label-optional { font-weight: 400; color: var(--text-muted); }
 
-.form-row input {
+.form-row input,
+.form-row textarea {
   padding: 12px 14px;
   border-radius: var(--radius-sm);
   border: 1.5px solid var(--border-strong);
@@ -931,7 +996,13 @@ h3 { font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.form-row input:focus {
+.form-row textarea { resize: vertical; min-height: 76px; line-height: 1.5; }
+
+.form-row input::placeholder,
+.form-row textarea::placeholder { color: #9aa4b8; }
+
+.form-row input:focus,
+.form-row textarea:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
@@ -1109,6 +1180,8 @@ h3 { font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
   .coverage-grid { grid-template-columns: 1fr; gap: 40px; }
   .cta-grid { grid-template-columns: 1fr; gap: 36px; }
   .compare-grid { grid-template-columns: 1fr; }
+  .pilot-list { grid-template-columns: 1fr; gap: 14px; }
+  .pilot-card { padding: 32px 24px; }
   .testimonial-card { padding: 32px 26px; }
   .nav-links { display: none; }
   .section { padding: 64px 0; }

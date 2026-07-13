@@ -17,8 +17,9 @@ propio; funciona con el sitio estático en Vercel.
 3. **Pegue el código**
    Borre el contenido de `Code.gs` en el editor y pegue el contenido de
    [`Code.gs`](./Code.gs) de esta carpeta.
-   - (Opcional) Para recibir un email por cada solicitud, complete
-     `NOTIFY_EMAIL` con su correo.
+   - Para recibir un email por cada solicitud, complete `NOTIFY_EMAIL` con su
+     correo (por ejemplo `'info@oversiasolutions.com'`). Si lo deja en `''`, la
+     solicitud se guarda igual en la hoja **pero no se envía ningún aviso**.
    - Guarde (ícono de disquete)
 
 4. **Publique como aplicación web**
@@ -41,12 +42,19 @@ propio; funciona con el sitio estático en Vercel.
 
 ## Notas
 
-- **Columnas que se guardan:** Fecha, Nombre, Empresa, Email, País, Rubro, Tipo
-  (Demostración / Informe de muestra).
+- **Columnas que se guardan:** Fecha, Nombre, Empresa, Cargo, Email,
+  Países de interés, Categoría de producto, Comentario.
+- **Aviso por email:** solo se envía si `NOTIFY_EMAIL` tiene una dirección. Con
+  `''` no llega ningún correo (la fila se guarda igual). Tras cambiar el valor,
+  hay que volver a implementar para que tome efecto.
 - **Anti-spam:** el formulario incluye un campo oculto (*honeypot*). Si un bot lo
   completa, el script descarta el envío.
 - **Actualizar el código:** si cambia `Code.gs`, en Apps Script haga
   **Implementar → Gestionar implementaciones → editar → Nueva versión**. La URL
   `/exec` se mantiene.
+- **Encabezados de una hoja existente:** el script solo escribe la fila de
+  encabezados cuando la hoja está vacía. Si ya venía con las columnas viejas,
+  actualícelos a mano (o borre la hoja `Solicitudes` para que se regenere), o las
+  filas nuevas quedarán desalineadas.
 - **Migrar a Supabase más adelante:** solo habría que cambiar `FORM_ENDPOINT` y
   el destino; el formulario no requiere otros cambios.

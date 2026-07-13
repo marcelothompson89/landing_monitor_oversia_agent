@@ -12,7 +12,7 @@
 const NOTIFY_EMAIL = '';
 
 const SHEET_NAME = 'Solicitudes';
-const HEADERS = ['Fecha', 'Nombre', 'Empresa', 'Email', 'País', 'Rubro', 'Tipo'];
+const HEADERS = ['Fecha', 'Nombre', 'Empresa', 'Cargo', 'Email', 'Países de interés', 'Categoría de producto', 'Comentario'];
 
 function doPost(e) {
   try {
@@ -32,28 +32,29 @@ function doPost(e) {
       sheet.appendRow(HEADERS);
     }
 
-    const tipo = p.tipo === 'informe' ? 'Informe de muestra' : 'Demostración';
     sheet.appendRow([
       new Date(),
       p.nombre || '',
       p.empresa || '',
+      p.cargo || '',
       p.email || '',
       p.pais || '',
       p.rubro || '',
-      tipo
+      p.comentario || ''
     ]);
 
     if (NOTIFY_EMAIL) {
       MailApp.sendEmail({
         to: NOTIFY_EMAIL,
-        subject: `Nueva solicitud (${tipo}) — ${p.empresa || 'sin empresa'}`,
+        subject: `Nueva solicitud — ${p.empresa || 'sin empresa'}`,
         body: [
-          `Tipo: ${tipo}`,
           `Nombre: ${p.nombre || ''}`,
           `Empresa: ${p.empresa || ''}`,
+          `Cargo: ${p.cargo || ''}`,
           `Email: ${p.email || ''}`,
-          `País: ${p.pais || ''}`,
-          `Rubro: ${p.rubro || ''}`
+          `Países de interés: ${p.pais || ''}`,
+          `Categoría de producto: ${p.rubro || ''}`,
+          `Comentario: ${p.comentario || ''}`
         ].join('\n')
       });
     }

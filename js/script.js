@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       await fetch(FORM_ENDPOINT, { method: 'POST', body: formData, mode: 'no-cors' });
 
-      status.textContent = `Gracias, ${nombre}. Nos pondremos en contacto con usted en ${data.email} para coordinar la demostración.`;
+      status.textContent = `Gracias, ${nombre}. Nos pondremos en contacto con usted en ${data.email} a la brevedad.`;
       status.classList.add('success');
       form.reset();
     } catch (err) {
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       status.classList.add('error');
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Solicitar demostración';
+      submitBtn.textContent = 'Solicitar piloto de 4 semanas';
     }
   });
 
